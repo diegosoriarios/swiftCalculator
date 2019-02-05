@@ -26,6 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var mul: UIButton!
     @IBOutlet weak var equal: UIButton!
     @IBOutlet weak var clear: UIButton!
+    @IBOutlet weak var raiz: UIButton!
+    @IBOutlet weak var potencia: UIButton!
     
     var first_number: String = ""
     var second_number: String = ""
@@ -141,6 +143,9 @@ class ViewController: UIViewController {
     @IBAction func adding(_ sender: Any) {
         if !first{
             result = calculate(v1: Int(first_number)!, v2: Int(second_number)!, op: operation)
+            first_number = String(result)
+            operation = "add"
+            first = false
         }else{
             operation = "add"
             first = false
@@ -149,18 +154,47 @@ class ViewController: UIViewController {
     
     
     @IBAction func subtracting(_ sender: Any) {
-        operation = "sub"
-        first = false
+        if !first {
+            result = calculate(v1: Int(first_number)!, v2: Int(second_number)!, op: operation)
+            first_number = String(result)
+            operation = "sub"
+            first = false
+        }else{
+            operation = "sub"
+            first = false
+        }
     }
     
     @IBAction func division(_ sender: Any) {
-        operation = "div"
-        first = false
+        if !first {
+            result = calculate(v1: Int(first_number)!, v2: Int(second_number)!, op: operation)
+            first_number = String(result)
+            operation = "div"
+            first = false
+        }else{
+            operation = "div"
+            first = false
+        }
     }
  
     @IBAction func multiplication(_ sender: Any) {
-        operation = "mul"
-        first = false
+        if !first {
+            result = calculate(v1: Int(first_number)!, v2: Int(second_number)!, op: operation)
+            first_number = String(result)
+            operation = "mul"
+            first = false
+        }else{
+            operation = "mul"
+            first = false
+        }
+    }
+    
+    @IBAction func raizQuadrada(_ sender: Any) {
+        
+    }
+    
+    @IBAction func aoQuadrado(_ sender: Any) {
+    
     }
     
     @IBAction func equals(_ sender: Any) {
